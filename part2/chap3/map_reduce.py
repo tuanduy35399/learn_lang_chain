@@ -54,7 +54,7 @@ make_final_reduce_chain= (
     | StrOutputParser()
 )
 
-split_map_reduce_chain= (
+split_map_reduce_chain= ( # ap dung map cho tat ca chunk
     text_chunks_chain | summarize_map_chain.map() | make_final_reduce_chain
 )
 file_path= Path(__file__).resolve().parent / "Moby-Dick.txt"
