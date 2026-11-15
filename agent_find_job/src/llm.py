@@ -7,5 +7,5 @@ load_dotenv()
 llm =  ChatOpenAI(model=os.environ["MODEL_NAME"], 
                   base_url=os.environ["BASE_URL"],
                   temperature=0.5
-                  ).with_structured_output(ResearchPlan)
+                  )
 

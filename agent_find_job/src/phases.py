@@ -10,10 +10,10 @@ def prepare_plan(planner: ResearchPlan) -> list[dict]: #tra ve danh sach dict ch
     return [
         {
             # lay 1 phan tu lop cha
-            "agent_id":task["agent_id"],
-            "role":task["role"],
-            "sub_query": task["sub_query"],
-            "original_question":planner.original_quesion,
+            "agent_id":task.agent_id,
+            "role":task.role,
+            "sub_query": task.sub_query,
+            "original_question":planner.original_question,
             #de Python tao them
             "output_file": f"/researches/{task.agent_id}.md"
         }
@@ -25,10 +25,10 @@ def prepare_plan(planner: ResearchPlan) -> list[dict]: #tra ve danh sach dict ch
 def build_agent(task: dict):
     print("func build_agent: Dang xay dung agent...")
     formatted_prompt_sub_agent =SUBAGENT_RESEARCH_PROMPT.format(
-        role= task.role, 
-        sub_question= task.sub_query,
-        original_quesion=task.original_question,
-        output_file= task.output_file
+        role= task["role"], 
+        sub_query= task["sub_query"],
+        original_question=task["original_question"],
+        output_file= task["output_file"]
     )
     agent= create_deep_agent(model=llm, 
                              backend=StateBackend(),
@@ -37,33 +37,37 @@ def build_agent(task: dict):
 
 
     agent_input= {
-        "messages": [HumanMessage(content= task.sub_query)]
+        "messages": [HumanMessage(content= task["sub_query"])]
     }
+    
     return agent, agent_input
 def run_agent_sync(task: dict) ->dict:
-    print(f"[{task.agent_id}] | Dang tien hanh nghien cuu: {task.sub_query}")
+    
     agent, agent_input= build_agent(task)
+    print(f"Xay dung xong agent {task['agent_id']}")
+    print(f"[{task["agent_id"]}] | Dang tien hanh nghien cuu: {task["sub_query"]}")
     result= agent.ainvoke(agent_input)
     print(f"[{task.agent_id}] | Hoan thanh cong viec!!")
     return {
             "agent_id":task["agent_id"],
             # "role":task["role"],
             # "sub_query": task["sub_query"],
-            "original_question":task["original_quesion"],
+            "original_question":task["original_question"],
             "summary": result["messages"][-1].content,
             "files": result.get("files", {})
     }
 
 async def run_agent_async(task: dict) ->dict:
-    print(f"[{task.agent_id}] | Dang tien hanh nghien cuu: {task.sub_query}")
+    
     agent, agent_input= build_agent(task)
+    print(f"[{task["agent_id"]}] | Dang tien hanh nghien cuu: {task["sub_query"]}")
     result= await agent.ainvoke(agent_input)
-    print(f"[{task.agent_id}] | Hoan thanh cong viec!!")
+    print(f"[{task['agent_id']}] | Hoan thanh cong viec!!")
     return {
             "agent_id":task["agent_id"],
             # "role":task["role"],
             # "sub_query": task["sub_query"],
-            "original_question":task["original_quesion"],
+            "original_question":task["original_question"],
             "summary": result["messages"][-1].content,
             "files": result.get("files", {})
     }
@@ -87,17 +91,22 @@ def merge_results(sub_results: list[dict]) -> dict:
 
 
 #tao file bao cao cuoi cung
-def extract_final_report(final_state: dict) -> dict:
-    files = final_state.get("files", {})
+def extract_final_report(result: dict) -> str:
+    files = result.get("files", {})
+    
+    # Ưu tiên lấy nội dung từ file ảo /final_report.md nếu agent đã gọi write_file
     if "/final_report.md" in files:
-        report = "\n".join(files["/final_report.md"]["content"])
+        file_data = files["/final_report.md"]
+        # Tùy phiên bản deepagents, content có thể là str hoặc list các dòng
+        content = file_data["content"] if isinstance(file_data, dict) else file_data
+        if isinstance(content, list):
+            content = "\n".join(content)
     else:
-        report = final_state["messages"][-1].content
+        # Dự phòng: lấy tin nhắn trả lời cuối cùng của agent
+        content = result["messages"][-1].content
 
-    return {
-        "report": report,
-        "virtual_files": list(files.keys()),
-        "raw_files": files,
-    }
+    with open("final_report.md", "w", encoding="utf-8") as f:
+        f.write(content)
 
+    return content
 

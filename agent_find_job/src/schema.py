@@ -9,7 +9,7 @@ class Sub_Agent(BaseModel):
     sub_query: str= Field(description="Cau hoi con can tim/ nghien cuu day du ngu canh")
 
 class ResearchPlan(BaseModel):
-    original_quesion: str
+    original_question: str
     analysis: str
     sub_tasks: list[Sub_Agent]
 
