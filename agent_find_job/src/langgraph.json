@@ -1,7 +1,0 @@
-{
-  "dependencies": ["."],
-  "graphs": {
-    "research_pipeline": "./pipeline.py:deep_research_pipeline"
-  },
-  "env": "../.env"
-}

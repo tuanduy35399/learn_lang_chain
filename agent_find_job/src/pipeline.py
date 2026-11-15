@@ -43,11 +43,7 @@ deep_research_pipeline= (
     | RunnableLambda(extract_final_report)
 )
 
-# cau_hoi= "Cho thong tin chi tiet bai hoc ve LangChain, AI Agent di"
-# output = asyncio.run(deep_research_pipeline.ainvoke(cau_hoi))
-# print(f'{'='*10}\KET QUA CUOI CUNG\n{output}')
+cau_hoi= "Cho thong tin chi tiet bai hoc ve LangChain, AI Agent di"
+output = asyncio.run(deep_research_pipeline.ainvoke(cau_hoi))
+print(f'{'='*10}\nKET QUA CUOI CUNG\n{output}')
 
-if __name__ == "__main__":
-    cau_hoi = "Toi la sinh vien Ky thuat phan mem toi biet 1 chut ve AI Agent,finetune model LLM va YOLO lieu toi co the ung tuyen vao AI Engineer o TMA khong"
-    output = asyncio.run(deep_research_pipeline.ainvoke(cau_hoi))
-    print(f"\n{'='*20}\n{output}")
