@@ -23,7 +23,7 @@ def prepare_plan(planner: ResearchPlan) -> list[dict]: #tra ve danh sach dict ch
 # tao 1 con agent
 
 def build_agent(task: dict):
-    print("func build_agent: Dang xay dung agent...")
+    print(f"func build_agent: Dang xay dung agent {task['agent_id']}...")
     formatted_prompt_sub_agent =SUBAGENT_RESEARCH_PROMPT.format(
         role= task["role"], 
         sub_query= task["sub_query"],
@@ -35,7 +35,7 @@ def build_agent(task: dict):
                              tools=[research_web], 
                              system_prompt=formatted_prompt_sub_agent)
 
-
+    print(f"Xay dung xong agent {task['agent_id']}")
     agent_input= {
         "messages": [HumanMessage(content= task["sub_query"])]
     }
@@ -44,10 +44,10 @@ def build_agent(task: dict):
 def run_agent_sync(task: dict) ->dict:
     
     agent, agent_input= build_agent(task)
-    print(f"Xay dung xong agent {task['agent_id']}")
+    
     print(f"[{task["agent_id"]}] | Dang tien hanh nghien cuu: {task["sub_query"]}")
-    result= agent.ainvoke(agent_input)
-    print(f"[{task.agent_id}] | Hoan thanh cong viec!!")
+    result= agent.invoke(agent_input)
+    print(f"[{task['agent_id']}] | Hoan thanh cong viec!!")
     return {
             "agent_id":task["agent_id"],
             # "role":task["role"],
@@ -91,12 +91,12 @@ def merge_results(sub_results: list[dict]) -> dict:
 
 
 #tao file bao cao cuoi cung
-def extract_final_report(result: dict) -> str:
+def extract_final_report(result: dict):
     files = result.get("files", {})
-    
+    # print(f'Ham extract final report {files}')
     # Ưu tiên lấy nội dung từ file ảo /final_report.md nếu agent đã gọi write_file
-    if "/final_report.md" in files:
-        file_data = files["/final_report.md"]
+    if "final_report.md" in files:
+        file_data = files["final_report.md"]
         # Tùy phiên bản deepagents, content có thể là str hoặc list các dòng
         content = file_data["content"] if isinstance(file_data, dict) else file_data
         if isinstance(content, list):
@@ -104,9 +104,6 @@ def extract_final_report(result: dict) -> str:
     else:
         # Dự phòng: lấy tin nhắn trả lời cuối cùng của agent
         content = result["messages"][-1].content
-
-    with open("final_report.md", "w", encoding="utf-8") as f:
-        f.write(content)
 
     return content
 

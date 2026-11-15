@@ -13,3 +13,8 @@ dependencies = [
     "langgraph>=1.2.22",
     "tavily>=1.1.0",
 ]
+
+[dependency-groups]
+dev = [
+    "langgraph-cli[inmem]>=0.4.43",
+]

@@ -1,0 +1,84 @@
+# BÁO CÁO ĐÁNH GIÁ NĂNG LỰC VÀ KHẢ NĂNG ỨNG TUYỂN VỊ TRÍ AI ENGINEER TẠI TMA SOLUTIONS
+
+---
+
+## 1. TỔNG QUAN & KẾT LUẬN (EXECUTIVE SUMMARY)
+
+**CÂU TRẢ LỜI NGẮN GỌN: BẠN HOÀN TOÀN CÓ THỂ VÀ RẤT PHÙ HỢP ĐỂ ỨNG TUYỂN VỊ TRÍ AI ENGINEER (INTERN / FRESHER / JUNIOR) TẠI TMA SOLUTIONS.**
+
+Sự kết hợp giữa **nền tảng Kỹ thuật phần mềm (Software Engineering - SE)** và kiến thức về **Generative AI (AI Agent, Fine-tune LLM)** cùng **Computer Vision (YOLO)** hiện là chân dung ứng viên có lợi thế cạnh tranh rất cao trên thị trường tuyển dụng hiện nay, đặc biệt tại các tập đoàn công nghệ dịch vụ phần mềm lớn như TMA Solutions.
+
+---
+
+## 2. PHÂN TÍCH NHU CẦU TUYỂN DỤNG VÀ MÔ HÌNH DỰ ÁN TẠI TMA SOLUTIONS
+
+### 2.1. Bản chất công việc của AI Engineer tại TMA Solutions
+- **TMA Solutions (TMA Technology Group)** là công ty gia công và phát triển giải pháp phần mềm hàng đầu Việt Nam cho các đối tác quốc tế (Bắc Mỹ, Châu Âu, Nhật Bản, Úc...).
+- Vị trí AI Engineer tại TMA phần lớn là **Applied AI / AI Engineering**:
+  - Tập trung vào việc ứng dụng các mô hình SOTA (State-of-the-Art) để giải quyết bài toán nghiệp vụ cụ thể của khách hàng.
+  - Tích hợp mô hình AI vào hệ sinh thái phần mềm sẵn có (Web, Mobile, Cloud, Embedded, Edge Devices).
+  - Tối ưu hóa hiệu năng mô hình (inference speed, latency, resource footprint) và triển khai (deployment, MLOps, CI/CD cho AI).
+- TMA **ít khi tìm kiếm AI Researcher thuần túy** (chỉ tập trung viết báo cáo, nghiên cứu lý thuyết toán học), mà ưu tiên kỹ sư có khả năng **code tốt, hiểu kiến trúc phần mềm và đưa được AI vào sản phẩm thực tế**.
+
+---
+
+## 3. PHÂN TÍCH ĐIỂM MẠNH TỪ PROFILE CỦA BẠN
+
+### 3.1. Xuất thân từ Kỹ thuật Phần mềm (Software Engineering) - "Vũ khí cốt lõi"
+- **Thực tế ngành:** Khoảng 70% - 80% công việc của một AI Engineer thực chất là Software Engineering (xây dựng data pipeline, viết RESTful API/gRPC, đóng gói container, quản lý database, viết clean code, unit testing, xử lý concurrency).
+- **Lợi thế:** Nhiều bạn theo học ngành Trí tuệ Nhân tạo hoặc Toán - Tin thường mạnh về giải thuật nhưng yếu về tư duy kiến trúc phần mềm, Clean Code và Design Patterns. Là sinh viên Kỹ thuật phần mềm, bạn có lợi thế vượt trội về việc kết nối giữa AI Core và ứng dụng thực tế.
+
+### 3.2. Kiến thức về AI Agent & Fine-tune LLM (Generative AI)
+- **Bắt kịp xu hướng nóng nhất:** Khách hàng của TMA trong các mảng Viễn thông (Telecom), Tài chính (FinTech), Y tế (Healthcare) và Quản trị doanh nghiệp đang tích cực tìm kiếm giải pháp:
+  - Tự động hóa quy trình thông minh (Intelligent Workflow Automation).
+  - Hệ thống RAG (Retrieval-Augmented Generation) và Multi-Agent.
+- **Giá trị thực tế:** Việc biết về **Fine-tuning (PEFT, LoRA, QLoRA)** chứng minh bạn hiểu sâu về vòng đời mô hình mở (Open-source LLMs như Llama, Mistral, Qwen), biết cách tùy biến mô hình cho dữ liệu doanh nghiệp thay vì chỉ dùng các API có sẵn của OpenAI hay Claude.
+
+### 3.3. Kiến thức về YOLO (Computer Vision)
+- **Thế mạnh truyền thống tại TMA:** TMA có TMA Innovation Center và các dự án về Smart City, IoT, Giám sát giao thông thông minh, Camera an ninh công nghiệp và Quản lý chất lượng sản phẩm (Industrial Defect Detection).
+- **Tính ứng dụng cao:** **YOLO** (từ YOLOv8, YOLOv9, YOLOv10 đến YOLOv11) là tiêu chuẩn công nghiệp (Industry Standard) cho bài toán Object Detection thời gian thực (Real-time). Biết YOLO đồng nghĩa với việc bạn có thể nhảy vào các dự án Edge AI, Camera AI của TMA rất nhanh.
+
+---
+
+## 4. NHỮNG KHOẢNG TRỐNG (GAPS) CẦN NÂNG CẤP TỪ "BIẾT MỘT CHÚT" THÀNH "LÀM ĐƯỢC VIỆC"
+
+Để tự tin vượt qua các vòng phỏng vấn kỹ thuật của TMA, bạn cần củng cố các điểm sau:
+
+| Lĩnh vực | Trạng thái hiện tại ("Biết một chút") | Yêu cầu cần đạt để vượt qua phỏng vấn TMA |
+| :--- | :--- | :--- |
+| **Machine Learning / Deep Learning cơ bản** | Nắm khái niệm chung | Nắm chắc: Overfitting, Underfitting, Regularization, Loss Functions, Optimizers (AdamW, SGD), Metrics đánh giá (Precision, Recall, F1, mAP@50-95, BLEU, ROUGE). |
+| **Computer Vision (YOLO)** | Chạy được script train mẫu | Hiểu rõ tiền xử lý ảnh (Data Augmentation), gán nhãn dữ liệu (Roboflow, Label Studio), đánh giá mAP, xuất model sang **ONNX / TensorRT** để inference thời gian thực trên GPU/CPU. |
+| **GenAI & AI Agent** | Gọi API, chạy ví dụ cơ bản | Hiểu sâu kiến trúc **RAG** (Vector DB: Chroma/FAISS/Milvus, Chunking strategy, Re-ranking), cơ chế Function Calling / Tool Calling, Agent Loops (ReAct framework). Nắm rõ tham số fine-tune (Rank, Alpha, Target modules, Epochs, Learning Rate). |
+| **API & Triển khai (Deployment)** | Code chạy trên Jupyter Notebook | Bắt buộc chuyển code sang dạng module (.py). Đóng gói API bằng **FastAPI**, container hóa bằng **Docker**, quản lý môi trường (Poetry/Conda/pipenv). |
+| **Ngoại ngữ (Tiếng Anh)** | Đọc hiểu tài liệu | TMA yêu cầu giao tiếp tiếng Anh cơ bản đến khá để đọc hiểu tài liệu dự án, trao đổi qua chat/email với khách hàng quốc tế. |
+
+---
+
+## 5. LỘ TRÌNH HÀNH ĐỘNG CỤ THỂ ĐỂ ỨNG TUYỂN THÀNH CÔNG VÀO TMA
+
+### Bước 1: Hoàn thiện Portfolio / GitHub với 2 dự án trọng điểm
+1. **Dự án 1 (Computer Vision - YOLO):**
+   - Đề tài: Hệ thống giám sát an toàn lao động (PPE Detection - phát hiện mũ bảo hộ, áo phản quang) hoặc Phát hiện đỗ xe trái phép.
+   - Yêu cầu: Tự thu thập/chọn dataset -> Huấn luyện với YOLOv8/v11 -> Tối ưu hóa sang ONNX Runtime -> Viết REST API bằng FastAPI / Streamlit demo.
+2. **Dự án 2 (Generative AI & Agent):**
+   - Đề tài: Trợ lý phân tích tài liệu kỹ thuật hoặc Customer Support Agent đa bước.
+   - Yêu cầu: Ứng dụng RAG kết hợp Tool-calling (tra cứu database, gửi mail, tính toán), có fine-tune một LLM nhỏ (Llama-3-8B hoặc Qwen2.5-7B) bằng QLoRA trên tập dữ liệu đặc thù.
+
+### Bước 2: Tối ưu hóa CV ứng tuyển
+- **Tiêu đề ứng tuyển:** *Fresher AI Engineer* hoặc *Junior AI / MLOps Engineer*.
+- **Cấu trúc CV:**
+  - Nêu rõ nền tảng Kỹ thuật phần mềm (ngôn ngữ: Python, C++/Java, SQL; công cụ: Git, Docker, Linux).
+  - Mô tả dự án AI theo mô hình **STAR (Situation - Task - Action - Result)**: Nêu rõ chỉ số (ví dụ: mAP đạt bao nhiêu %, latency inference giảm bao nhiêu ms, kiến trúc agent gồm những tool nào).
+  - Đính kèm link GitHub, demo video hoặc Hugging Face Space.
+
+### Bước 3: Lựa chọn kênh ứng tuyển tại TMA
+- **TMA Fresher / Internship Program:** TMA thường xuyên tổ chức các đợt tuyển dụng Fresher và Intern quanh năm tại TP.HCM và Công viên Sáng tạo TMA Quy Nhơn (TMA Innovation Park Bình Định).
+- **Nộp trực tiếp qua Website / LinkedIn:** Nộp hồ sơ vào các vị trí AI/Data Engineer Fresher tại trang tuyển dụng chính thức của TMA (tma.vn/careers) hoặc kết nối trực tiếp với các HR phụ trách Tech Recruitment của TMA trên LinkedIn.
+
+---
+
+## 6. KẾT LUẬN
+
+Bạn đang có một **bệ phóng lý tưởng** (ngành Kỹ thuật phần mềm) kết hợp với **kỹ năng AI mang tính thời đại** (Agent, Fine-tuning, YOLO). TMA Solutions là một trong những môi trường tốt nhất cho người mới bắt đầu để rèn luyện quy trình chuẩn quốc tế, tiếp xúc với các dự án lớn đa dạng và hoàn thiện kỹ năng từ Fresher lên Senior.
+
+Hãy đóng gói kiến thức thành các sản phẩm cụ thể trên GitHub, chuẩn bị CV chỉn chu và tự tin ứng tuyển ngay hôm nay!
