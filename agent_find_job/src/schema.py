@@ -1,5 +1,7 @@
 from pydantic import BaseModel, Field
 
+
+#phan nay cho LeaderPlan doc thoi nen khong can original quesion va output file o Sub Agent 
 class Sub_Agent(BaseModel):
     #viet description de LLM doc 
     agent_id: str = Field(description="ID cua sub-agent, Ex: sub_agent_1")

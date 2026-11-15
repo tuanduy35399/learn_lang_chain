@@ -32,17 +32,17 @@ Response:
         {{
             "agent_id": "sub_agent_1",
             "role": "Chuyên gia phân tích thị trường tuyển dụng nhân sự Công nghệ thông tin tại Việt Nam",
-            "sub_question": "Nhu cầu tuyển dụng, các công ty đang tuyển nhiều và mức lương trung bình theo từng cấp bậc (Junior, Middle, Senior) của vị trí AI Engineer tại Việt Nam hiện nay là bao nhiêu?"
+            "sub_query": "Nhu cầu tuyển dụng, các công ty đang tuyển nhiều và mức lương trung bình theo từng cấp bậc (Junior, Middle, Senior) của vị trí AI Engineer tại Việt Nam hiện nay là bao nhiêu?"
         }},
         {{
             "agent_id": "sub_agent_2",
             "role": "Kỹ sư trưởng AI (Principal AI Engineer) chuyên phụ trách phỏng vấn và đánh giá năng lực kỹ thuật",
-            "sub_question": "Các yêu cầu kỹ năng cốt lõi, công nghệ, framework (như PyTorch, LangChain, RAG, Fine-tuning LLM, MLOps) và bằng cấp nào thường xuất hiện trong mô tả công việc (JD) của AI Engineer?"
+            "sub_query": "Các yêu cầu kỹ năng cốt lõi, công nghệ, framework (như PyTorch, LangChain, RAG, Fine-tuning LLM, MLOps) và bằng cấp nào thường xuất hiện trong mô tả công việc (JD) của AI Engineer?"
         }},
         {{
             "agent_id": "sub_agent_3",
             "role": "Nhà nghiên cứu xu hướng nghề nghiệp và thị trường lao động ngành Trí tuệ nhân tạo",
-            "sub_question": "Xu hướng tuyển dụng AI Engineer đang dịch chuyển như thế nào giữa các mảng AI truyền thống (Computer Vision, NLP) sang Generative AI và AI Agent, cùng các lưu ý cho ứng viên ứng tuyển?"
+            "sub_query": "Xu hướng tuyển dụng AI Engineer đang dịch chuyển như thế nào giữa các mảng AI truyền thống (Computer Vision, NLP) sang Generative AI và AI Agent, cùng các lưu ý cho ứng viên ứng tuyển?"
         }}
     ]
 }}
@@ -57,17 +57,17 @@ Response:
         {{
             "agent_id": "sub_agent_1",
             "role": "Kiến trúc sư giải pháp AI chuyên tư vấn chuyển đổi số cho doanh nghiệp SME",
-            "sub_question": "Các giải pháp và kiến trúc phổ biến nhất hiện nay để xây dựng AI Agent chăm sóc khách hàng đa kênh (Website, Zalo, Facebook) cho doanh nghiệp vừa và nhỏ là gì?"
+            "sub_query": "Các giải pháp và kiến trúc phổ biến nhất hiện nay để xây dựng AI Agent chăm sóc khách hàng đa kênh (Website, Zalo, Facebook) cho doanh nghiệp vừa và nhỏ là gì?"
         }},
         {{
             "agent_id": "sub_agent_2",
             "role": "Chuyên gia tối ưu chi phí hạ tầng Cloud và mô hình ngôn ngữ lớn (LLM FinOps)",
-            "sub_question": "Chi phí xây dựng ban đầu và chi phí vận hành hàng tháng (token API, lưu trữ vector database, bảo trì) của một hệ thống AI Agent chăm sóc khách hàng ước tính khoảng bao nhiêu?"
+            "sub_query": "Chi phí xây dựng ban đầu và chi phí vận hành hàng tháng (token API, lưu trữ vector database, bảo trì) của một hệ thống AI Agent chăm sóc khách hàng ước tính khoảng bao nhiêu?"
         }},
         {{
             "agent_id": "sub_agent_3",
             "role": "Chuyên gia quản trị trải nghiệm khách hàng (CX) và kiểm soát rủi ro AI",
-            "sub_question": "Những hạn chế, rủi ro phổ biến (như ảo giác thông tin, bảo mật dữ liệu khách hàng, tỷ lệ phải chuyển sang nhân viên thật) khi dùng AI Agent thay thế nhân sự chăm sóc khách hàng là gì?"
+            "sub_query": "Những hạn chế, rủi ro phổ biến (như ảo giác thông tin, bảo mật dữ liệu khách hàng, tỷ lệ phải chuyển sang nhân viên thật) khi dùng AI Agent thay thế nhân sự chăm sóc khách hàng là gì?"
         }}
     ]
 }}
@@ -86,7 +86,7 @@ Bạn là: **{role}**.
 Bạn đang hoạt động dưới sự điều phối của Trưởng nhóm Nghiên cứu (Research Lead). Nhiệm vụ của bạn là thực hiện tìm kiếm chuyên sâu, kiểm chứng thông tin và trả về báo cáo chính xác cho câu hỏi được giao.
 
 - **Bối cảnh câu hỏi gốc của người dùng:** {original_question}
-- **Câu hỏi chuyên biệt bạn phải giải quyết:** {sub_question}
+- **Câu hỏi chuyên biệt bạn phải giải quyết:** {sub_query}
 - **File lưu trữ kết quả chi tiết:** `{output_file}`
 
 ---
@@ -94,7 +94,7 @@ Bạn đang hoạt động dưới sự điều phối của Trưởng nhóm Ngh
 # Quy trình làm việc bắt buộc
 
 ## 1. Chiến lược tìm kiếm (Search Strategy)
-- **Bám sát phạm vi:** Chỉ tập trung giải quyết đúng `{sub_question}`. Không lan man sang phần việc của các chuyên gia khác.
+- **Bám sát phạm vi:** Chỉ tập trung giải quyết đúng `{sub_query}`. Không lan man sang phần việc của các chuyên gia khác.
 - **Đa dạng hóa truy vấn:** Thực hiện 2–3 lượt tìm kiếm với các từ khóa khác nhau (kết hợp cả từ khóa tiếng Việt và thuật ngữ tiếng Anh chuyên ngành nếu cần) để có góc nhìn toàn diện.
 - **Ưu tiên dữ liệu thực tế:** Tìm kiếm số liệu định lượng (mức lương, chi phí, tỷ lệ phần trăm, mốc thời gian mới nhất), tên công cụ/công nghệ cụ thể, hoặc dẫn chứng từ nguồn uy tín. Tránh các nhận định chung chung.
 
@@ -106,7 +106,7 @@ Bạn đang hoạt động dưới sự điều phối của Trưởng nhóm Ngh
 Sau khi đã ghi xong file `{output_file}`, hãy trả về một tin nhắn phản hồi ngắn gọn, mật độ thông tin cao theo đúng cấu trúc sau:
 
 - **Đường dẫn dữ liệu chi tiết:** `{output_file}`
-- **Các phát hiện cốt lõi (Key Findings):** Liệt kê bằng gạch đầu dòng ngắn gọn, đi thẳng vào số liệu, sự thật, giải pháp cụ thể trả lời trực tiếp cho `{sub_question}`.
+- **Các phát hiện cốt lõi (Key Findings):** Liệt kê bằng gạch đầu dòng ngắn gọn, đi thẳng vào số liệu, sự thật, giải pháp cụ thể trả lời trực tiếp cho `{sub_query}`.
 - **Điểm cần lưu ý / Mâu thuẫn dữ liệu (nếu có):** Ghi chú ngắn nếu các nguồn có sự chênh lệch số liệu hoặc giới hạn cần cân nhắc.
 - **Nguồn tham khảo (Source URLs):** Liệt kê danh sách các đường dẫn URL uy tín đã dùng để trích xuất thông tin (mỗi link 1 dòng, không bịa đặt URL).
 """
